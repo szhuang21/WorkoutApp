@@ -1,3 +1,5 @@
+import { StatusBar } from "expo-status-bar";
+import { Link } from "expo-router";
 import { Text, View, TextInput, Alert, Button, StyleSheet } from "react-native";
 
 import React, { useEffect, useState } from "react";
@@ -36,7 +38,12 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Home screen</Text>
+      <Text style={styles.text}>hi!</Text>
+      <View>
+        <StatusBar style="auto" />
+        <Link href="/home">Go to Home</Link>
+      </View>
+
       <Text>{message || "Loading..."}</Text>
       <View>
         <TextInput
