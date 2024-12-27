@@ -10,11 +10,11 @@ const TabIcon = ({ icon, color, name, focused }) => {
         source={icon}
         style={[styles.icon, { tintColor: color }]}
         resizeMode="contain"
-        tintColor={color}
       />
       <Text
         style={[
           styles.iconText,
+          { color },
           focused ? styles.textFocused : styles.textRegular,
         ]}
       >
@@ -30,6 +30,14 @@ const TabsLayout = () => {
       <Tabs
         screenOptions={{
           tabBarShowLabel: false,
+          tabBarActiveTintColor: "#FFA001",
+          tabBarInactiveTintColor: "#CDCDE0",
+          tabBarStyle: {
+            backgroundColor: "#161622",
+            borderTopWidth: 1,
+            borderTopColor: "#232533",
+            height: 84,
+          },
         }}
       >
         <Tabs.Screen
@@ -116,6 +124,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   textRegular: {
-    fontWeight: "300",
+    fontWeight: 300,
   },
 });

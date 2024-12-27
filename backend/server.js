@@ -11,6 +11,7 @@ app.get("/api/test", (req, res) => {
   res.json({ message: "Hello from the Node.js backend!" });
 });
 
+// scrapes an instagram link for the description
 app.post("/api/scrape", async (req, res) => {
   console.log("hit /api/scrape");
   const { link } = req.body;
@@ -40,6 +41,7 @@ app.post("/api/scrape", async (req, res) => {
     res.status(500).json({ error: "Failed to scrape Instagram link" });
   }
 });
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
